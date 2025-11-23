@@ -112,7 +112,6 @@ $report = $reportService->generateReport();
             <li><strong>Moto:</strong> R$ 3,00 por hora</li>
             <li><strong>Caminhão:</strong> R$ 10,00 por hora</li>
         </ul>
-        <p><em>O tempo de permanência é calculado em horas, arredondado para cima.</em></p>
     </div>
 </body>
 </html>

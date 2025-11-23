@@ -21,8 +21,25 @@ final class VehicleValidator
         $plate = strtoupper(trim((string)($input['plate'] ?? '')));
         $vehicleType = strtolower(trim((string)($input['vehicle_type'] ?? '')));
 
-        if ($plate === '' || !preg_match('/^[A-Z0-9-]{5,10}$/', $plate)) {
-            $errors[] = 'Placa inválida (use letras/números e hífen, 5-10 chars).';
+        // Remove hífen para validação
+        $plateWithoutHyphen = str_replace('-', '', $plate);
+        
+        // Validação: LLLNLNN (Mercosul) ou LLLNNNN (antigo)
+        // Onde L é letra e N é número
+        $isValidPlate = false;
+        if (strlen($plateWithoutHyphen) === 7) {
+            // Formato Mercosul: LLLNLNN (3 letras, 1 número, 1 letra, 2 números)
+            if (preg_match('/^[A-Z]{3}[0-9][A-Z][0-9]{2}$/', $plateWithoutHyphen)) {
+                $isValidPlate = true;
+            }
+            // Formato antigo: LLLNNNN (3 letras, 4 números)
+            elseif (preg_match('/^[A-Z]{3}[0-9]{4}$/', $plateWithoutHyphen)) {
+                $isValidPlate = true;
+            }
+        }
+        
+        if ($plate === '' || !$isValidPlate) {
+            $errors[] = 'Placa inválida. Use o formato LLLNLNN (Mercosul) ou LLLNNNN (antigo).';
         }
 
         $allowed = ['car', 'truck', 'motorcycle'];
