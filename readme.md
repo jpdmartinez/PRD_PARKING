@@ -1,4 +1,4 @@
-# PRD_PARK - Sistema de Gerenciamento de Estacionamento
+# PRD_PARKING - Sistema de Gerenciamento de Estacionamento
 
 Sistema de gerenciamento de estacionamento desenvolvido em PHP, seguindo princípios de Clean Architecture e Domain-Driven Design (DDD).
 
@@ -39,7 +39,7 @@ Sistema completo para gerenciamento de estacionamento que permite:
 
 1. Clone o repositório:
 ```bash
-git clone https://github.com/jpdmartinez/PRD_PARK
+git clone https://github.com/jpdmartinez/PRD_PARKING
 cd PRD_PARK
 ```
 
