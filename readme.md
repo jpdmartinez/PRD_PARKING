@@ -140,7 +140,7 @@ O projeto segue uma **Arquitetura em Camadas** com separação clara de responsa
    - Localizada em `public/`
    - Responsável por receber requisições e renderizar respostas
 
-## Decisões de Design
+## Conceitos utilizados
 
 ### 1. **SRP**
 - **Motivo**: Separação clara de responsabilidades, facilitando manutenção e testes
