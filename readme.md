@@ -79,45 +79,42 @@ O sistema estará disponível em: `http://localhost:8000`
 
 ```
 PRD_PARK/
-├── public/                 # Ponto de entrada da aplicação (web root)
-│   ├── index.php          # Lista de veículos
-│   ├── register.php       # Cadastro de veículos
-│   ├── checkin.php        # Check-in de veículos
-│   ├── checkout.php       # Check-out de veículos
-│   └── reports.php        # Relatórios de faturamento
+├── public/                 
+│   ├── index.php          
+│   ├── register.php       
+│   ├── checkin.php        
+│   ├── checkout.php       
+│   └── reports.php        
 │
-├── src/                    # Código fonte da aplicação
-│   ├── Application/       # Camada de aplicação (casos de uso)
+├── src/                    
+│   ├── Application/       
 │   │   ├── ParkingService.php
 │   │   └── ReportService.php
 │   │
-│   ├── Domain/            # Camada de domínio (regras de negócio)
+│   ├── Domain/            
 │   │   ├── Vehicle.php
 │   │   ├── VehicleRepository.php
 │   │   ├── VehicleValidator.php
 │   │   ├── ParkingCalculator.php
 │   │   ├── ParkingPolicy.php
-│   │   └── Policies/      # Políticas de cálculo por tipo de veículo
+│   │   └── Policies/      
 │   │       ├── CarPolicy.php
 │   │       ├── MotorcyclePolicy.php
 │   │       └── TruckPolicy.php
 │   │
-│   └── Infra/             # Camada de infraestrutura
+│   └── Infra/             
 │       └── SqliteVehicleRepository.php
 │
-├── storage/               # Armazenamento de dados
-│   ├── database.sqlite   # Banco de dados SQLite
-│   └── migrate.php       # Script de migração
+├── storage/               
+│   ├── database.sqlite   
+│   └── migrate.php       
 │
-├── vendor/               # Dependências do Composer
-├── composer.json         # Configuração do Composer
-└── readme.md            # Este arquivo
+├── vendor/               
+├── composer.json         
+└── readme.md            
 ```
 
 ## Arquitetura
-
-O projeto segue uma **Arquitetura em Camadas** com separação clara de responsabilidades:
-
 ### Camadas
 
 1. **Domain (Domínio)**
@@ -203,8 +200,6 @@ A placa deve seguir um dos formatos:
 - **Formato Antigo**: `LLLNNNN` (3 letras, 4 números)
   - Exemplo: `ABC1234`, `ABC-1234`
 ![alt text](public/assets/image4.png)
-
-O hífen é opcional e será ignorado na validação.
 
 ### Validação de Datas
 - Datas de check-in e check-out devem estar no formato ISO 8601
